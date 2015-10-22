@@ -1,6 +1,6 @@
 "ViM Startup Configuration File
 "Connor Sullivan
-" Sat 12 Sep 14:48:17 2015
+"Thu 22 Oct 13:53:12 2015"
 
 "Initialize Pathogen
 execute pathogen#infect()
@@ -9,6 +9,7 @@ execute pathogen#helptags()
 "Configure RVim
 set nocompatible
 set shiftwidth=4
+set tabstop=4
 syntax enable
 filetype plugin indent on
 filetype indent on
