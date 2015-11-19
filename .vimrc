@@ -103,9 +103,9 @@ nnoremap ¬ <C-w>l
 let g:pymode_indent = 1
 let g:pymode_folding = 1
 let g:pymode_options_colorcolumn = 0
-"let g:pymode_rope = 0
+let g:pymode_rope = 0
 
-abbreviate pypath #!usr/bin/python
+abbreviate pypath # !usr/bin/python
 abbreviate pycode # -*- coding: utf-8 -*-
 
 if has ('gui_running')
