@@ -38,6 +38,15 @@ if has('gui_running')
 	set fillchars+=stl:\ ,stlnc:\ "
 	let spr="\ue0b0"
 	let sbspr="\ue0b1"
+	"Additional Window Maps
+	nnoremap <d-j> 4j
+	nnoremap <d-k> 4k
+	vnoremap <d-j> 4j
+	vnoremap <d-k> 4k
+	nnoremap 8 7j
+	nnoremap 9 7k
+	vnoremap 8 7j
+	vnoremap 9 7k
 else
 	set fillchars+=stl:\ ,stlnc:\
 	let spr=""
@@ -54,14 +63,15 @@ nnoremap `2 "B
 nnoremap `3 "C
 nnoremap `4 "D
 "Swap Visual Modes"
-nnoremap <C-v> v
-nnoremap v <C-v>
+nnoremap V <c-v>
+nnoremap v V
+
 "Time Stamp"
 :nnoremap <F5> "=strftime("%c")<CR>P
 :inoremap <F5> <C-R>=strftime("%c")<CR>"
 "Custom Stylez"
 set fillchars-=vert:\|
-colorscheme murphy
+colorscheme jellybeans
 "Edit VimRC map"
 nnoremap <leader>ev :tabe $MYVIMRC<cr>
 nnoremap <leader>sv :so $MYVIMRC<cr>
@@ -81,13 +91,22 @@ let g:NERDTreeWinPos = "left"
 
 	"__Movement_&_Window_Maps__"
 	
-nnoremap 8 6j
-nnoremap 9 6k
+nnoremap 8 7j
+nnoremap 9 7k
+vnoremap 8 7j
+vnoremap 9 7k
 "Tab Movements
 nnoremap <Right> gt
 nnoremap <Left> gT
 inoremap <Right> gt
 inoremap <Left> gT
+nnoremap <c-l> gt
+nnoremap <c-h> gT
+inoremap <c-l> gt
+inoremap <c-h> gT
+"Indent Movements
+vnoremap <tab> >><esc>gv
+vnoremap <s-tab> <<<esc>gv
 "Line Spaces
 nnoremap <leader>k O<Esc>j
 inoremap <leader>k O<Esc>j
