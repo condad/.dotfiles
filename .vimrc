@@ -1,7 +1,6 @@
 	"__ViM_Startup_Configuration_File__"
-		"Thu Dec 10 11:09:05 2015"
+		"Tue Jan  5 14:36:22 2016"
 		
-
 	"__Initialize_Pathogen__"
 
 execute pathogen#infect()
@@ -20,6 +19,7 @@ let maplocalleader = "-"
 filetype off
 set autoindent
 nnoremap <Esc><Esc> :w<CR>
+nnoremap <f1> :tabclose<cr>
 syntax on
 set shiftwidth=4
 set tabstop=4
@@ -43,10 +43,10 @@ if has('gui_running')
 	nnoremap <d-k> 4k
 	vnoremap <d-j> 4j
 	vnoremap <d-k> 4k
-	nnoremap 8 7j
-	nnoremap 9 7k
-	vnoremap 8 7j
-	vnoremap 9 7k
+	nnoremap <d-8> 10j
+	nnoremap <d-9> 10k
+	vnoremap <d-8> 10j
+	vnoremap <d-9> 10k
 else
 	set fillchars+=stl:\ ,stlnc:\
 	let spr=""
@@ -68,7 +68,7 @@ nnoremap v V
 
 "Time Stamp"
 :nnoremap <F5> "=strftime("%c")<CR>P
-:inoremap <F5> <C-R>=strftime("%c")<CR>"
+:inoremap <F5> <C-R>=strftime("%c")<CR>
 "Custom Stylez"
 set fillchars-=vert:\|
 colorscheme jellybeans
@@ -80,6 +80,10 @@ nnoremap 11 c$
 "Easier Escape"
 inoremap kj <C-[>
 vnoremap kj <C-[>
+"Close all tabs
+nnoremap <c-=> <esc>:tabclose
+inoremap <c-=> <esc>:tabclose
+vnoremap <c-=> <esc>:tabclose
 
 
 	"__Nerd_Tree__"
@@ -105,6 +109,8 @@ nnoremap <c-h> gT
 inoremap <c-l> gt
 inoremap <c-h> gT
 "Indent Movements
+nnoremap <tab> >>
+nnoremap <s-tab> <<
 vnoremap <tab> >><esc>gv
 vnoremap <s-tab> <<<esc>gv
 "Line Spaces
@@ -133,7 +139,7 @@ let g:pymode_folding = 1
 let g:pymode_options_colorcolumn = 0
 let g:pymode_rope = 0
 "Virtual Env
-let g:virtualenv_directory="~/workspace"
+let g:virtualenv_directory="~/.virtualenvs/"
 abbreviate pypath # !usr/bin/python
 abbreviate pycode # -*- coding: utf-8 -*-
 
