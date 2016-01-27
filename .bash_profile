@@ -1,4 +1,5 @@
 # Bash Startup Script
+alias mvi="mvim -p"
 alias vi="mvim -v"
 alias pyclean="rm *.pyc"
 

@@ -9,6 +9,7 @@ execute pathogen#helptags()
 
 	"__General_Settings__"
 
+set timeoutlen=250
 set encoding=utf-8
 scriptencoding utf-8
 set number
@@ -76,7 +77,7 @@ colorscheme jellybeans
 nnoremap <leader>ev :tabe $MYVIMRC<cr>
 nnoremap <leader>sv :so $MYVIMRC<cr>
 "Editing Maps"
-nnoremap 11 c$
+nnoremap 11 I# <esc>
 "Easier Escape"
 inoremap kj <C-[>
 vnoremap kj <C-[>
