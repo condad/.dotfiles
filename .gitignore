@@ -1,0 +1,9 @@
+*
+!.gitignore
+!.vim/autoload
+!.vim/colors
+!.vimrc
+!.bash_profile
+!.tmux.conf
+!.zshrc
+!.viminfo

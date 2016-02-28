@@ -6,6 +6,12 @@
 execute pathogen#infect()
 execute pathogen#helptags()
 
+	"__Install_Plugins__"
+
+call plug#begin('~/.vim/bundle')
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-surround'
+call plug#end()
 
 	"__General_Settings__"
 
