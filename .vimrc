@@ -10,7 +10,10 @@ execute pathogen#helptags()
 
 call plug#begin('~/.vim/bundle')
 Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-surround'
+Plug 'jiangmiao/auto-pairs'
+Plug 'klen/python-mode'
 call plug#end()
 
 	"__General_Settings__"
@@ -78,7 +81,7 @@ nnoremap v V
 :inoremap <F5> <C-R>=strftime("%c")<CR>
 "Custom Stylez"
 set fillchars-=vert:\|
-colorscheme jellybeans
+"colorscheme jellybeans
 "Edit VimRC map"
 nnoremap <leader>ev :tabe $MYVIMRC<cr>
 nnoremap <leader>sv :so $MYVIMRC<cr>
