@@ -1,19 +1,25 @@
-# Bash Startup Script
+#
+## 
+###		BASH STARTUP SCRIPT
+## 
+#
+
+
 alias ls='ls -G'
+alias mv='mv -i'
+alias cp='cp -i'
+
+# Remove Compiled Python Files
 alias pyclean="rm *.pyc"
 
-# Vim Mode for Term
-set editing-mode vi
-set keymap vi-command
-
+# My Prompt
 PS1="\[\033[36m\]\u\[\033[m\]@\[\033[33;1m\]\w\[\033[m\]>"
-
-# Goodfoot Remote aliases
-alias invoice.py="vim scp://goodfop0@goodfootdelivery.com//home2/goodfop0/gfd_invoicing/invoice.py"
 
 # Virtual Env Wrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/lab
 export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+
+# Initialize VirtualEnvWrapper
 . /usr/local/bin/virtualenvwrapper_lazy.sh
 clear
