@@ -12,8 +12,15 @@ call plug#begin('~/.vim/bundle')
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
+Plug 'itchyny/lightline.vim'
+Plug 'dkprice/vim-easygrep'
+Plug 'mattn/emmet-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'klen/python-mode'
+Plug 'SirVer/ultisnips'
+Plug 'isRuslan/vim-es6'
 call plug#end()
 
 	"__General_Settings__"
@@ -73,8 +80,8 @@ nnoremap `2 "B
 nnoremap `3 "C
 nnoremap `4 "D
 "Swap Visual Modes"
-nnoremap V <c-v>
-nnoremap v V
+nnoremap v <c-v>
+nnoremap <c-v> v
 
 "Time Stamp"
 :nnoremap <F5> "=strftime("%c")<CR>P
@@ -119,10 +126,10 @@ nnoremap <c-h> gT
 inoremap <c-l> gt
 inoremap <c-h> gT
 "Indent Movements
-nnoremap <tab> >>
-nnoremap <s-tab> <<
-vnoremap <tab> >><esc>gv
-vnoremap <s-tab> <<<esc>gv
+nnoremap > >>
+vnoremap > >><esc>gv
+nnoremap < <<
+vnoremap < <<<esc>gv
 "Line Spaces
 nnoremap <leader>k O<Esc>j
 inoremap <leader>k O<Esc>j
