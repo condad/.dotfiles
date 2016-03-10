@@ -89,7 +89,7 @@ nnoremap <c-v> v
 :inoremap <F5> <C-R>=strftime("%c")<CR>
 "Custom Stylez"
 set fillchars-=vert:\|
-"colorscheme jellybeans
+colorscheme jellybeans
 "Edit VimRC map"
 nnoremap <leader>ev :tabe $MYVIMRC<cr>
 nnoremap <leader>sv :so $MYVIMRC<cr>
@@ -155,14 +155,16 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 let g:pymode_indent = 1
 let g:pymode_folding = 1
 let g:pymode_options_colorcolumn = 0
-let g:pymode_rope = 0
 "Virtual Env
 let g:virtualenv_directory="~/.virtualenvs/"
+"Python File Headers
 abbreviate pypath # !usr/bin/python
 abbreviate pycode # -*- coding: utf-8 -*-
 
 if has ('gui_running')
 	highlight Pmenu guibg=#cccccc gui=bold    
+else
+	let g:pymode_rope = 0
 endif
 
 
