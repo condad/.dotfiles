@@ -10,6 +10,8 @@ execute pathogen#helptags()
 
 call plug#begin('~/.vim/bundle')
 Plug 'scrooloose/nerdtree'
+Plug 'elixir-lang/vim-elixir'
+Plug 'pangloss/vim-javascript'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
@@ -21,6 +23,11 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'klen/python-mode'
 Plug 'SirVer/ultisnips'
 Plug 'isRuslan/vim-es6'
+Plug 'jmcantrell/vim-virtualenv'
+Plug 'lambdatoast/elm.vim'
+"Colours
+Plug 'aereal/vim-colors-japanesque'
+Plug 'nanotech/jellybeans.vim'
 call plug#end()
 
 	"__General_Settings__"
@@ -42,6 +49,9 @@ set shiftwidth=4
 set tabstop=4
 filetype plugin indent on
 filetype indent on
+
+" default colour scheme
+colorscheme japanesque
 
 
 	"__GUI_Settings__"
@@ -79,6 +89,7 @@ nnoremap `1 "A
 nnoremap `2 "B
 nnoremap `3 "C
 nnoremap `4 "D
+
 "Swap Visual Modes"
 nnoremap v <c-v>
 nnoremap <c-v> v
@@ -86,9 +97,10 @@ nnoremap <c-v> v
 "Time Stamp"
 :nnoremap <F5> "=strftime("%c")<CR>P
 :inoremap <F5> <C-R>=strftime("%c")<CR>
-"Custom Stylez"
+
+"Status Bar Styling"
 set fillchars-=vert:\|
-colorscheme jellybeans
+
 "Edit VimRC map"
 nnoremap <leader>ev :tabe $MYVIMRC<cr>
 nnoremap <leader>sv :so $MYVIMRC<cr>
