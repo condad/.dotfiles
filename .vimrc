@@ -109,6 +109,8 @@ nnoremap 11 I# <esc>
 "Easier Escape"
 inoremap kj <C-[>
 vnoremap kj <C-[>
+inoremap KJ <C-[>
+vnoremap KJ <C-[>
 "Close all tabs
 nnoremap <c-=> <esc>:tabclose
 inoremap <c-=> <esc>:tabclose
