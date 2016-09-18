@@ -21,11 +21,20 @@ Plug 'dkprice/vim-easygrep'
 Plug 'mattn/emmet-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'klen/python-mode'
-Plug 'SirVer/ultisnips'
-Plug 'isRuslan/vim-es6'
+Plug 'ervandew/supertab'
 Plug 'jmcantrell/vim-virtualenv'
+" Snippets
+Plug 'valloric/youcompleteme'
+Plug 'SirVer/ultisnips' " snippet engine
+Plug 'honza/vim-snippets'
+Plug 'lepture/vim-jinja'
+Plug 'isRuslan/vim-es6'
+" Syntax
 Plug 'lambdatoast/elm.vim'
-"Colours
+Plug 'elzr/vim-json'
+Plug 'justinj/vim-react-snippets'
+" Colours
+Plug 'roosta/srcery'
 Plug 'aereal/vim-colors-japanesque'
 Plug 'nanotech/jellybeans.vim'
 call plug#end()
@@ -51,7 +60,7 @@ filetype plugin indent on
 filetype indent on
 
 " default colour scheme
-colorscheme japanesque
+colorscheme srcery
 
 
 	"__GUI_Settings__"
@@ -122,6 +131,7 @@ vnoremap <c-=> <esc>:tabclose
 map <leader>n <plug>NERDTreeTabsToggle<CR>
 let g:nerdtree_tabs_open_on_gui_startup=0
 let g:NERDTreeWinPos = "left"
+let g:NERDTreeIgnore = ['\.pyc$']
 
 
 	"__Movement_&_Window_Maps__"
@@ -238,5 +248,17 @@ function! LightLineFilename()
        \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
        \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
 endfunction
+
+
+	"__Snippet_Config__"
+
+let g:SuperTabDefaultCompletionType    = '<c-n>'
+let g:SuperTabCrMapping                = 0
+let g:UltiSnipsExpandTrigger           = '<tab>'
+let g:UltiSnipsJumpForwardTrigger      = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
+let g:ycm_key_list_select_completion   = ['<c-j>', '<c-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<c-k>', '<c-p>', '<Up>']
+
 
 	"__END__"
