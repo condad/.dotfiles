@@ -20,19 +20,20 @@ Plug 'itchyny/lightline.vim'
 Plug 'dkprice/vim-easygrep'
 Plug 'mattn/emmet-vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'klen/python-mode'
 Plug 'ervandew/supertab'
 Plug 'jmcantrell/vim-virtualenv'
+Plug 'alfredodeza/pytest'
+Plug 'klen/python-mode'
 " Snippets
 Plug 'valloric/youcompleteme'
 Plug 'SirVer/ultisnips' " snippet engine
 Plug 'honza/vim-snippets'
 Plug 'lepture/vim-jinja'
 Plug 'isRuslan/vim-es6'
+Plug 'bentayloruk/vim-react-es6-snippets'
 " Syntax
 Plug 'lambdatoast/elm.vim'
 Plug 'elzr/vim-json'
-Plug 'justinj/vim-react-snippets'
 " Colours
 Plug 'roosta/srcery'
 Plug 'aereal/vim-colors-japanesque'
