@@ -1,14 +1,36 @@
+  "***************************************"
+   "************************************"
+	"**********************************"
+	
 	"__ViM_Startup_Configuration_File__"
 		"Tue Jan  5 14:36:22 2016"
 		
+		"************************"
+		 "**********************"
+		  "********************"
+		   "******************"
+		    "****************"
+		     "**************"
+		      "************"
+		       "**********"
+		        "********"
+		         "******"
+		          "****"
+		           "**"
+		
+
 	"__Initialize_Pathogen__"
+
 
 execute pathogen#infect()
 execute pathogen#helptags()
 
+
 	"__Install_Plugins__"
 
+
 call plug#begin('~/.vim/bundle')
+
 Plug 'scrooloose/nerdtree'
 Plug 'elixir-lang/vim-elixir'
 Plug 'pangloss/vim-javascript'
@@ -24,6 +46,7 @@ Plug 'ervandew/supertab'
 Plug 'jmcantrell/vim-virtualenv'
 Plug 'alfredodeza/pytest'
 Plug 'klen/python-mode'
+
 " Snippets
 Plug 'valloric/youcompleteme'
 Plug 'SirVer/ultisnips' " snippet engine
@@ -31,40 +54,129 @@ Plug 'honza/vim-snippets'
 Plug 'lepture/vim-jinja'
 Plug 'isRuslan/vim-es6'
 Plug 'bentayloruk/vim-react-es6-snippets'
+
 " Syntax
 Plug 'lambdatoast/elm.vim'
 Plug 'elzr/vim-json'
+
 " Colours
 Plug 'roosta/srcery'
 Plug 'aereal/vim-colors-japanesque'
 Plug 'nanotech/jellybeans.vim'
+
 call plug#end()
+
 
 	"__General_Settings__"
 
+
+syntax on
 set timeoutlen=250
 set encoding=utf-8
 scriptencoding utf-8
 set number
 set numberwidth=1
 set modifiable
-let mapleader = ";"
-let maplocalleader = "-"
-filetype off
 set autoindent
-nnoremap <Esc><Esc> :w<CR>
-nnoremap <f1> :tabclose<cr>
-syntax on
-set shiftwidth=4
-set tabstop=4
+
+filetype off
 filetype plugin indent on
 filetype indent on
+
+let mapleader = ";"
+let maplocalleader = "-"
+nnoremap <Esc><Esc> :w<CR>
+nnoremap <f1> :tabclose<cr>
 
 " default colour scheme
 colorscheme srcery
 
+" ???? TODO: figure out why i need this
+let g:netrw_liststyle=3 "?"
+
+"Quick Registers"
+nnoremap `1 "A
+nnoremap `2 "B
+nnoremap `3 "C
+nnoremap `4 "D
+
+"Swap Visual Modes"
+nnoremap v <c-v>
+nnoremap <c-v> v
+
+"Repeat Previous Command
+nnoremap - @:
+
+"Time Stamp"
+:nnoremap <F5> "=strftime("%c")<CR>P
+:inoremap <F5> <C-R>=strftime("%c")<CR>
+
+"Status Bar Styling"
+set fillchars-=vert:\|
+
+"Edit VimRC map"
+nnoremap <leader>ev :tabe $MYVIMRC<cr>
+nnoremap <leader>sv :so $MYVIMRC<cr>
+
+"Editing Maps"
+nnoremap 11 I# <esc>
+
+"Easier Escape"
+inoremap kj <C-[>
+vnoremap kj <C-[>
+inoremap KJ <C-[>
+vnoremap KJ <C-[>
+
+"Close all tabs
+nnoremap <c-=> <esc>:tabclose
+inoremap <c-=> <esc>:tabclose
+vnoremap <c-=> <esc>:tabclose
+"
+"Leaping
+nnoremap 8 7j
+nnoremap 9 7k
+vnoremap 8 7j
+vnoremap 9 7k
+
+"Tab Movements
+nnoremap <Right> gt
+nnoremap <Left> gT
+inoremap <Right> gt
+inoremap <Left> gT
+nnoremap <c-l> gt
+nnoremap <c-h> gT
+inoremap <c-l> gt
+inoremap <c-h> gT
+
+"Indent Movements
+nnoremap > >>
+vnoremap > >><esc>gv
+nnoremap < <<
+vnoremap < <<<esc>gv
+
+"Line Spaces
+nnoremap <leader>k O<Esc>j
+inoremap <leader>k O<Esc>j
+nnoremap <leader>j o<Esc>k
+inoremap <leader>j o<Esc>k
+
+"Window Movement Mappings
+nnoremap ˙ <C-w>h 
+nnoremap ∆ <C-w>j 
+nnoremap ˚ <C-w>k 
+nnoremap ¬ <C-w>l
+
+"Line Movement Mappings"
+nnoremap <C-k> :m .-2<CR>==
+nnoremap <C-j> :m .+1<CR>==
+inoremap <C-j> <Esc>:m .+1<CR>==gi
+inoremap <C-k> <Esc>:m .-2<CR>==gi
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
+
 
 	"__GUI_Settings__"
+
 	
 set guioptions-=r "Remove Right scroll bar"
 set guifont=Droid\ Sans\ Mono\ for\ Powerline:h13
@@ -91,90 +203,10 @@ else
 endif
 
 
-	"__Misc_Settings__"
-
-let g:netrw_liststyle=3 "?"
-"Quick Registers"
-nnoremap `1 "A
-nnoremap `2 "B
-nnoremap `3 "C
-nnoremap `4 "D
-
-"Swap Visual Modes"
-nnoremap v <c-v>
-nnoremap <c-v> v
-
-"Time Stamp"
-:nnoremap <F5> "=strftime("%c")<CR>P
-:inoremap <F5> <C-R>=strftime("%c")<CR>
-
-"Status Bar Styling"
-set fillchars-=vert:\|
-
-"Edit VimRC map"
-nnoremap <leader>ev :tabe $MYVIMRC<cr>
-nnoremap <leader>sv :so $MYVIMRC<cr>
-"Editing Maps"
-nnoremap 11 I# <esc>
-"Easier Escape"
-inoremap kj <C-[>
-vnoremap kj <C-[>
-inoremap KJ <C-[>
-vnoremap KJ <C-[>
-"Close all tabs
-nnoremap <c-=> <esc>:tabclose
-inoremap <c-=> <esc>:tabclose
-vnoremap <c-=> <esc>:tabclose
-
-
-	"__Nerd_Tree__"
-
-map <leader>n <plug>NERDTreeTabsToggle<CR>
-let g:nerdtree_tabs_open_on_gui_startup=0
-let g:NERDTreeWinPos = "left"
-let g:NERDTreeIgnore = ['\.pyc$']
-
-
-	"__Movement_&_Window_Maps__"
-	
-nnoremap 8 7j
-nnoremap 9 7k
-vnoremap 8 7j
-vnoremap 9 7k
-"Tab Movements
-nnoremap <Right> gt
-nnoremap <Left> gT
-inoremap <Right> gt
-inoremap <Left> gT
-nnoremap <c-l> gt
-nnoremap <c-h> gT
-inoremap <c-l> gt
-inoremap <c-h> gT
-"Indent Movements
-nnoremap > >>
-vnoremap > >><esc>gv
-nnoremap < <<
-vnoremap < <<<esc>gv
-"Line Spaces
-nnoremap <leader>k O<Esc>j
-inoremap <leader>k O<Esc>j
-nnoremap <leader>j o<Esc>k
-inoremap <leader>j o<Esc>k
-"Window Movement Mappings
-nnoremap ˙ <C-w>h 
-nnoremap ∆ <C-w>j 
-nnoremap ˚ <C-w>k 
-nnoremap ¬ <C-w>l
-"Line Movement Mappings"
-nnoremap <C-k> :m .-2<CR>==
-nnoremap <C-j> :m .+1<CR>==
-inoremap <C-j> <Esc>:m .+1<CR>==gi
-inoremap <C-k> <Esc>:m .-2<CR>==gi
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
-
-
 	"__Python_Settings__"
+
+
+autocmd FileType python setlocal shiftwidth=4 tabstop=4
 
 let g:pymode_indent = 1
 let g:pymode_folding = 1
@@ -192,7 +224,25 @@ else
 endif
 
 
-	"__LightLine_Things__"
+	"__Javascript_Settings__"
+
+
+set foldmethod=syntax
+let g:javascript_plugin_jsdoc = 1
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+
+
+	"__Nerd_Tree_Settings_"
+
+
+map <leader>n <plug>NERDTreeTabsToggle<CR>
+let g:nerdtree_tabs_open_on_gui_startup=0
+let g:NERDTreeWinPos = "left"
+let g:NERDTreeIgnore = ['\.pyc$']
+
+
+	"__LightLine_Settings__"
+
 
 set laststatus=2
 let g:lightline = {
@@ -251,7 +301,8 @@ function! LightLineFilename()
 endfunction
 
 
-	"__Snippet_Config__"
+	"__Snippet_Settings__"
+
 
 let g:SuperTabDefaultCompletionType    = '<c-n>'
 let g:SuperTabCrMapping                = 0
@@ -262,4 +313,6 @@ let g:ycm_key_list_select_completion   = ['<c-j>', '<c-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<c-k>', '<c-p>', '<Up>']
 
 
+	"*******"
 	"__END__"
+	"*******"
