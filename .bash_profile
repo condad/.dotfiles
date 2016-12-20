@@ -25,9 +25,11 @@ export PROJECT_HOME=$HOME/lab
 export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
 
 # Add PostGreSQL Executables
-export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/9.5/bin"
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.5/bin
+export PATH=$PATH:/usr/local/sbin
 
-# Initialize VirtualEnvWrapper
+# Source Environment Scripts
 . /usr/local/bin/virtualenvwrapper_lazy.sh
+. /usr/local/opt/autoenv/activate.sh
 
 clear

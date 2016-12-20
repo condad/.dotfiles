@@ -1,22 +1,19 @@
-  "***************************************"
-   "************************************"
-	"**********************************"
-	
+  "**********************************"
+  "**********************************"
 	"__ViM_Startup_Configuration_File__"
-		"Tue Jan  5 14:36:22 2016"
-		
-		"************************"
-		 "**********************"
-		  "********************"
-		   "******************"
-		    "****************"
-		     "**************"
-		      "************"
-		       "**********"
-		        "********"
-		         "******"
-		          "****"
-		           "**"
+      "Tue Jan  5 14:36:22 2016"
+      "************************"
+       "**********************"
+        "********************"
+         "******************"
+          "****************"
+           "**************"
+            "************"
+             "**********"
+              "********"
+               "******"
+                "****"
+                 "**"
 		
 
 	"__Initialize_Pathogen__"
@@ -44,19 +41,19 @@ Plug 'mattn/emmet-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'ervandew/supertab'
 Plug 'jmcantrell/vim-virtualenv'
-Plug 'alfredodeza/pytest'
 Plug 'klen/python-mode'
+Plug 'janko-m/vim-test'
 
 " Snippets
 Plug 'valloric/youcompleteme'
 Plug 'SirVer/ultisnips' " snippet engine
 Plug 'honza/vim-snippets'
-Plug 'lepture/vim-jinja'
 Plug 'isRuslan/vim-es6'
 Plug 'bentayloruk/vim-react-es6-snippets'
 
 " Syntax
 Plug 'lambdatoast/elm.vim'
+Plug 'lepture/vim-jinja'
 Plug 'elzr/vim-json'
 
 " Colours
@@ -78,7 +75,7 @@ set number
 set numberwidth=1
 set modifiable
 set autoindent
-
+set tabstop=2 shiftwidth=2 expandtab
 filetype off
 filetype plugin indent on
 filetype indent on
@@ -90,6 +87,7 @@ nnoremap <f1> :tabclose<cr>
 
 " default colour scheme
 colorscheme srcery
+" colorscheme industry
 
 " ???? TODO: figure out why i need this
 let g:netrw_liststyle=3 "?"
@@ -224,13 +222,15 @@ else
 endif
 
 
-	"__Javascript_Settings__"
+	"__FrontEnd_Settings__"
 
 
 set foldmethod=syntax
 let g:javascript_plugin_jsdoc = 1
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
-
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
+autocmd FileType css setlocal shiftwidth=2 tabstop=2
+autocmd FileType scss setlocal shiftwidth=2 tabstop=2
 
 	"__Nerd_Tree_Settings_"
 
@@ -311,6 +311,17 @@ let g:UltiSnipsJumpForwardTrigger      = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
 let g:ycm_key_list_select_completion   = ['<c-j>', '<c-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<c-k>', '<c-p>', '<Up>']
+
+
+	"__Testing_Mappings__"
+
+
+let test#strategy = "iterm"
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
 
 
 	"*******"
