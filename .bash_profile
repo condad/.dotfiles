@@ -1,35 +1,10 @@
-#
-## 
-###		BASH STARTUP SCRIPT
-## 
-#
+# .bash_profile
 
+# Get the aliases and functions
+# from https://github.com/globalkeith/dotfiles/blob/master/.bash_profile
 
-alias vi='vim'
-alias ls='ls -G'
-alias mv='mv -i'
-alias cp='cp -i'
-alias mvim='mvim -p'
+if [ -f ~/.bashrc  ]; then
+  . ~/.bashrc
+fi
 
-# commands
-alias pyclean="find . -name "*.pyc" -delete"
-
-# My Prompt
-PS1="\[\033[36m\]\u\[\033[m\]@\[\033[33;1m\]\w\[\033[m\]>"
-set -o vi
-
-# Virtual Env Wrapper
-export EDITOR=vim
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/lab
-export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
-
-# Add PostGreSQL Executables
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.5/bin
-export PATH=$PATH:/usr/local/sbin
-
-# Source Environment Scripts
-. /usr/local/bin/virtualenvwrapper_lazy.sh
-. /usr/local/opt/autoenv/activate.sh
-
-clear
+# ...
