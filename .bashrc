@@ -16,7 +16,7 @@ alias ...='cd ../../'
 alias ....='cd ../../../'
 
 # commands
-alias pyclean="find . -name "*.pyc" -delete"
+alias pyclean="find . -name \"*.pyc\" -exec rm -f {} \;"
 
 # Virtual Env Wrapper
 export EDITOR=vim
@@ -31,6 +31,9 @@ export PATH=$PATH:/usr/local/sbin
 # Source Environment Scripts
 . /usr/local/bin/virtualenvwrapper_lazy.sh
 . /usr/local/opt/autoenv/activate.sh
+
+# My Prompt
+PS1="\[\033[1;36m\]\u\[\033[m\]@\[\033[1;33m\]\w\[\033[m\]>"
 
 # colours
 # from https://github.com/globalkeith/dotfiles/blob/master/.bashrc
@@ -77,8 +80,5 @@ bakwht="$(tput setab 7 2>/dev/null || echo '\e[47m')"  # White
 
 # Reset
 txtrst="$(tput sgr 0 2>/dev/null || echo '\e[0m')"  # Text Reset
-
-# My Prompt
-PS1="\[\033[1;36m\]\u\[\033[m\]@\[\033[1;33m\]\w\[\033[m\]>"
 
 clear
