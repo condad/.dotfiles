@@ -1,3 +1,6 @@
+	"*******"
+	"__VIM__"
+	"*******"
 
 "initialize pathogen
 
@@ -24,7 +27,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'elixir-lang/vim-elixir'
 Plug 'jmcantrell/vim-virtualenv'
 Plug 'klen/python-mode'
-Plug 'janko-m/vim-test'
 "snippets
 Plug 'valloric/youcompleteme'
 Plug 'SirVer/ultisnips' " snippet engine
@@ -55,14 +57,11 @@ filetype indent on
 let mapleader = ";"
 let maplocalleader = "-"
 
-
 autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
 autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
 
-
-" default colour scheme
+"default colour scheme
 colorscheme srcery "default colour scheme
-" colorscheme industry
 
 "quick buffers
 nnoremap `1 "A
@@ -70,25 +69,25 @@ nnoremap `2 "B
 nnoremap `3 "C
 nnoremap `4 "D
 
-"Swap Visual Modes"
+"swap visual modes
 nnoremap v <c-v>
 nnoremap <c-v> v
 
-"Time Stamp"
+"time stamp
 :nnoremap <F5> "=strftime("%c")<CR>P
 :inoremap <F5> <C-R>=strftime("%c")<CR>
 
-"Status Bar Styling"
+"status bar styling
 set fillchars-=vert:\|
 
-"Edit VimRC map"
+"edit vimrc map
 nnoremap <leader>ev :tabe $MYVIMRC<cr>
 nnoremap <leader>sv :so $MYVIMRC<cr>
 
-"Editing Maps"
+"editing map
 nnoremap 11 I# <esc>
 
-"Easier Escape"
+"easier escape
 inoremap kj <C-[>
 vnoremap kj <C-[>
 inoremap KJ <C-[>
@@ -126,9 +125,8 @@ inoremap <C-k> <Esc>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
-
-	"__GUI_Settings__"
-
+"
+"gui settings
 	
 set guioptions-=r "Remove Right scroll bar"
 set guifont=Droid\ Sans\ Mono\ for\ Powerline:h13
@@ -157,8 +155,7 @@ else
 endif
 
 
-	"__Python_Settings__"
-
+"python settings
 
 autocmd FileType python setlocal shiftwidth=4 tabstop=4
 
@@ -178,7 +175,7 @@ else
 endif
 
 
-	"__FrontEnd_Settings__"
+"web dev settings
 
 autocmd FileType javascript setlocal foldmethod=syntax
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
@@ -186,8 +183,8 @@ autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2
 autocmd FileType scss setlocal shiftwidth=2 tabstop=2
 
-	"__Nerd_Tree_Settings_"
 
+"nerd tree settings 
 
 map <leader>n <plug>NERDTreeTabsToggle<CR>
 let g:nerdtree_tabs_open_on_gui_startup=0
@@ -195,8 +192,7 @@ let g:NERDTreeWinPos = "left"
 let g:NERDTreeIgnore = ['\.pyc$']
 
 
-	"__LightLine_Settings__"
-
+"lightline settings
 
 set laststatus=2
 let g:lightline = {
@@ -255,7 +251,7 @@ function! LightLineFilename()
 endfunction
 
 
-	"__Snippet_Settings__"
+"snippet settings
 
 let g:SuperTabDefaultCompletionType    = '<c-n>'
 let g:SuperTabCrMapping                = 0
@@ -264,17 +260,6 @@ let g:UltiSnipsJumpForwardTrigger      = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
 let g:ycm_key_list_select_completion   = ['<c-j>', '<c-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<c-k>', '<c-p>', '<Up>']
-
-
-	"__Testing_Mappings__"
-
-
-let test#strategy = "iterm"
-nmap <silent> <leader>t :TestNearest<CR>
-nmap <silent> <leader>T :TestFile<CR>
-nmap <silent> <leader>a :TestSuite<CR>
-nmap <silent> <leader>l :TestLast<CR>
-nmap <silent> <leader>g :TestVisit<CR>
 
 
 	"*******"
