@@ -1,98 +1,70 @@
-  "**********************************"
-  "**********************************"
-	"__ViM_Startup_Configuration_File__"
-      "Tue Jan  5 14:36:22 2016"
-      "************************"
-       "**********************"
-        "********************"
-         "******************"
-          "****************"
-           "**************"
-            "************"
-             "**********"
-              "********"
-               "******"
-                "****"
-                 "**"
-		
 
-	"__Initialize_Pathogen__"
-
+"initialize pathogen
 
 execute pathogen#infect()
 execute pathogen#helptags()
 
 
-	"__Install_Plugins__"
-
+"dependencies
 
 call plug#begin('~/.vim/bundle')
-
+"general
 Plug 'scrooloose/nerdtree'
-Plug 'elixir-lang/vim-elixir'
-Plug 'pangloss/vim-javascript'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-commentary'
 Plug 'itchyny/lightline.vim'
+Plug 'scrooloose/nerdcommenter'
 Plug 'dkprice/vim-easygrep'
 Plug 'mattn/emmet-vim'
-Plug 'jiangmiao/auto-pairs'
 Plug 'ervandew/supertab'
+Plug 'jiangmiao/auto-pairs'
+"syntax
+Plug 'pangloss/vim-javascript'
+Plug 'elixir-lang/vim-elixir'
 Plug 'jmcantrell/vim-virtualenv'
 Plug 'klen/python-mode'
 Plug 'janko-m/vim-test'
-
-" Snippets
+"snippets
 Plug 'valloric/youcompleteme'
 Plug 'SirVer/ultisnips' " snippet engine
 Plug 'honza/vim-snippets'
 Plug 'isRuslan/vim-es6'
 Plug 'bentayloruk/vim-react-es6-snippets'
-
-" Syntax
-Plug 'lambdatoast/elm.vim'
+"syntax
 Plug 'lepture/vim-jinja'
 Plug 'elzr/vim-json'
-
-" Colours
+"colours
 Plug 'roosta/srcery'
 Plug 'aereal/vim-colors-japanesque'
 Plug 'nanotech/jellybeans.vim'
-
 call plug#end()
 
 
-	"__General_Settings__"
+"global settings
 
-
-syntax on
-set timeoutlen=250
-set encoding=utf-8
-scriptencoding utf-8
 set number
-set numberwidth=1
-set modifiable
-set autoindent
-set tabstop=2 shiftwidth=2 expandtab
+set timeoutlen=250
+scriptencoding utf-8
+set shiftwidth=2
+set tabstop=2
 filetype off
 filetype plugin indent on
 filetype indent on
 
 let mapleader = ";"
 let maplocalleader = "-"
-nnoremap <Esc><Esc> :w<CR>
-nnoremap <f1> :tabclose<cr>
+
+
+autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
+autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
+
 
 " default colour scheme
-colorscheme srcery
+colorscheme srcery "default colour scheme
 " colorscheme industry
 
-" ???? TODO: figure out why i need this
-let g:netrw_liststyle=3 "?"
-
-"Quick Registers"
+"quick buffers
 nnoremap `1 "A
 nnoremap `2 "B
 nnoremap `3 "C
@@ -101,9 +73,6 @@ nnoremap `4 "D
 "Swap Visual Modes"
 nnoremap v <c-v>
 nnoremap <c-v> v
-
-"Repeat Previous Command
-nnoremap - @:
 
 "Time Stamp"
 :nnoremap <F5> "=strftime("%c")<CR>P
@@ -125,26 +94,11 @@ vnoremap kj <C-[>
 inoremap KJ <C-[>
 vnoremap KJ <C-[>
 
-"Close all tabs
-nnoremap <c-=> <esc>:tabclose
-inoremap <c-=> <esc>:tabclose
-vnoremap <c-=> <esc>:tabclose
-"
-"Leaping
-nnoremap 8 7j
-nnoremap 9 7k
-vnoremap 8 7j
-vnoremap 9 7k
-
 "Tab Movements
 nnoremap <Right> gt
 nnoremap <Left> gT
 inoremap <Right> gt
 inoremap <Left> gT
-nnoremap <c-l> gt
-nnoremap <c-h> gT
-inoremap <c-l> gt
-inoremap <c-h> gT
 
 "Indent Movements
 nnoremap > >>
@@ -195,6 +149,8 @@ if has('gui_running')
 	vnoremap <d-8> 10j
 	vnoremap <d-9> 10k
 else
+  "Status Bar Styling"
+  set fillchars-=vert:\|
 	set fillchars+=stl:\ ,stlnc:\
 	let spr=""
 	let sbspr="|"
@@ -224,9 +180,7 @@ endif
 
 	"__FrontEnd_Settings__"
 
-
-set foldmethod=syntax
-let g:javascript_plugin_jsdoc = 1
+autocmd FileType javascript setlocal foldmethod=syntax
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2
@@ -302,7 +256,6 @@ endfunction
 
 
 	"__Snippet_Settings__"
-
 
 let g:SuperTabDefaultCompletionType    = '<c-n>'
 let g:SuperTabCrMapping                = 0

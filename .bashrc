@@ -30,7 +30,6 @@ export PATH=$PATH:/usr/local/sbin
 
 # Source Environment Scripts
 . /usr/local/bin/virtualenvwrapper_lazy.sh
-. /usr/local/opt/autoenv/activate.sh
 
 # My Prompt
 PS1="\[\033[1;36m\]\u\[\033[m\]@\[\033[1;33m\]\w\[\033[m\]>"
