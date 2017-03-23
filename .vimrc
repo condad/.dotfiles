@@ -28,6 +28,7 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'jmcantrell/vim-virtualenv'
 Plug 'klen/python-mode'
 "snippets
+Plug 'slashmili/alchemist.vim'
 Plug 'valloric/youcompleteme'
 Plug 'SirVer/ultisnips' " snippet engine
 Plug 'honza/vim-snippets'
@@ -125,8 +126,8 @@ inoremap <C-k> <Esc>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
-"
-"gui settings
+
+"GUI settings
 	
 set guioptions-=r "Remove Right scroll bar"
 set guifont=Droid\ Sans\ Mono\ for\ Powerline:h13
@@ -137,6 +138,7 @@ if has('gui_running')
 	set fillchars+=stl:\ ,stlnc:\ "
 	let spr="\ue0b0"
 	let sbspr="\ue0b1"
+	highlight Pmenu guibg=#cccccc gui=bold    
 	"Additional Window Maps
 	nnoremap <d-j> 4j
 	nnoremap <d-k> 4k
@@ -158,21 +160,15 @@ endif
 "python settings
 
 autocmd FileType python setlocal shiftwidth=4 tabstop=4
-
 let g:pymode_indent = 1
 let g:pymode_folding = 1
 let g:pymode_options_colorcolumn = 0
-"Virtual Env
-let g:virtualenv_directory="~/.virtualenvs/"
-"Python File Headers
-abbreviate pypath # !usr/bin/python
-abbreviate pycode # -*- coding: utf-8 -*-
+let g:pymode_rope = 0
+let g:pymode_rope_lookup_project = 0
 
-if has ('gui_running')
-	highlight Pmenu guibg=#cccccc gui=bold    
-else
-	let g:pymode_rope = 0
-endif
+
+"virtual env settings
+let g:virtualenv_directory="~/.virtualenvs/"
 
 
 "web dev settings
