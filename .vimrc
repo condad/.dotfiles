@@ -14,29 +14,28 @@ call plug#begin('~/.vim/bundle')
 "general
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
+Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'itchyny/lightline.vim'
-Plug 'scrooloose/nerdcommenter'
 Plug 'dkprice/vim-easygrep'
-Plug 'mattn/emmet-vim'
 Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
 "syntax
+Plug 'vim-syntastic/syntastic'
+Plug 'tpope/vim-liquid'
 Plug 'pangloss/vim-javascript'
 Plug 'elixir-lang/vim-elixir'
 Plug 'jmcantrell/vim-virtualenv'
-Plug 'klen/python-mode'
-"snippets
-Plug 'slashmili/alchemist.vim'
-Plug 'valloric/youcompleteme'
-Plug 'SirVer/ultisnips' " snippet engine
-Plug 'honza/vim-snippets'
-Plug 'isRuslan/vim-es6'
-Plug 'bentayloruk/vim-react-es6-snippets'
-"syntax
 Plug 'lepture/vim-jinja'
 Plug 'elzr/vim-json'
+"snippets
+Plug 'SirVer/ultisnips' " snippet engine
+Plug 'valloric/youcompleteme'
+Plug 'slashmili/alchemist.vim'
+Plug 'isRuslan/vim-es6'
+Plug 'bentayloruk/vim-react-es6-snippets'
+Plug 'honza/vim-snippets'
 "colours
 Plug 'roosta/srcery'
 Plug 'aereal/vim-colors-japanesque'
@@ -46,11 +45,13 @@ call plug#end()
 
 "global settings
 
+scriptencoding utf-8
 set number
 set timeoutlen=250
-scriptencoding utf-8
 set shiftwidth=2
 set tabstop=2
+set foldmethod=indent
+set foldnestmax=2
 filetype off
 filetype plugin indent on
 filetype indent on
@@ -160,11 +161,6 @@ endif
 "python settings
 
 autocmd FileType python setlocal shiftwidth=4 tabstop=4
-let g:pymode_indent = 1
-let g:pymode_folding = 1
-let g:pymode_options_colorcolumn = 0
-let g:pymode_rope = 0
-let g:pymode_rope_lookup_project = 0
 
 
 "virtual env settings
@@ -178,6 +174,14 @@ autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2
 autocmd FileType scss setlocal shiftwidth=2 tabstop=2
+
+
+"syntastic settings
+
+let g:syntastic_error_symbol = "EE"
+let g:syntastic_style_error_symbol = "ee"
+let g:syntastic_warning_symbol = "WW"
+let g:syntastic_style_warning_symbol = "ww"
 
 
 "nerd tree settings 

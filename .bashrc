@@ -81,3 +81,6 @@ bakwht="$(tput setab 7 2>/dev/null || echo '\e[47m')"  # White
 txtrst="$(tput sgr 0 2>/dev/null || echo '\e[0m')"  # Text Reset
 
 clear
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
