@@ -1,6 +1,6 @@
-	"*******"
-	"__VIM__"
-	"*******"
+  "*******"
+  "__VIM__"
+  "*******"
 
 "initialize pathogen
 
@@ -19,7 +19,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'itchyny/lightline.vim'
 Plug 'dkprice/vim-easygrep'
-Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
 "syntax
 Plug 'vim-syntastic/syntastic'
@@ -29,8 +28,9 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'jmcantrell/vim-virtualenv'
 Plug 'lepture/vim-jinja'
 Plug 'elzr/vim-json'
+Plug 'Vimjas/vim-python-pep8-indent'
 "snippets
-Plug 'SirVer/ultisnips' " snippet engine
+Plug 'SirVer/ultisnips'
 Plug 'valloric/youcompleteme'
 Plug 'slashmili/alchemist.vim'
 Plug 'isRuslan/vim-es6'
@@ -46,12 +46,21 @@ call plug#end()
 "global settings
 
 scriptencoding utf-8
+
 set number
 set timeoutlen=250
-set shiftwidth=2
+set textwidth=120
+
+set expandtab
 set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set autoindent
+
+"folding
 set foldmethod=indent
 set foldnestmax=2
+
 filetype off
 filetype plugin indent on
 filetype indent on
@@ -59,17 +68,8 @@ filetype indent on
 let mapleader = ";"
 let maplocalleader = "-"
 
-autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
-autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
-
 "default colour scheme
 colorscheme srcery "default colour scheme
-
-"quick buffers
-nnoremap `1 "A
-nnoremap `2 "B
-nnoremap `3 "C
-nnoremap `4 "D
 
 "swap visual modes
 nnoremap v <c-v>
@@ -120,60 +120,51 @@ nnoremap ˚ <C-w>k
 nnoremap ¬ <C-w>l
 
 "Line Movement Mappings"
-nnoremap <C-k> :m .-2<CR>==
-nnoremap <C-j> :m .+1<CR>==
-inoremap <C-j> <Esc>:m .+1<CR>==gi
-inoremap <C-k> <Esc>:m .-2<CR>==gi
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
+nnoremap <C-i> :m .-2<CR>==
+nnoremap <C-u> :m .+1<CR>==
+inoremap <C-u> <Esc>:m .+1<CR>==gi
+inoremap <C-i> <Esc>:m .-2<CR>==gi
+vnoremap <C-u> :m '>+1<CR>gv=gv
+vnoremap <C-i> :m '<-2<CR>gv=gv
 
 
 "GUI settings
-	
+  
 set guioptions-=r "Remove Right scroll bar"
 set guifont=Droid\ Sans\ Mono\ for\ Powerline:h13
 set guioptions-=R "?"
 set guioptions-=L
 
 if has('gui_running')
-	set fillchars+=stl:\ ,stlnc:\ "
-	let spr="\ue0b0"
-	let sbspr="\ue0b1"
-	highlight Pmenu guibg=#cccccc gui=bold    
-	"Additional Window Maps
-	nnoremap <d-j> 4j
-	nnoremap <d-k> 4k
-	vnoremap <d-j> 4j
-	vnoremap <d-k> 4k
-	nnoremap <d-8> 10j
-	nnoremap <d-9> 10k
-	vnoremap <d-8> 10j
-	vnoremap <d-9> 10k
+  "status bar w/ gui
+  set fillchars+=stl:\ ,stlnc:\ "
+  let spr="\ue0b0"
+  let sbspr="\ue0b1"
+  highlight Pmenu guibg=#cccccc gui=bold    
+
+  "window maps for with
+  nnoremap <d-j> 4j
+  nnoremap <d-k> 4k
+  vnoremap <d-j> 4j
+  vnoremap <d-k> 4k
+  nnoremap <d-8> 10j
+  nnoremap <d-9> 10k
+  vnoremap <d-8> 10j
+  vnoremap <d-9> 10k
 else
-  "Status Bar Styling"
+  "status bar wo/ gui
   set fillchars-=vert:\|
-	set fillchars+=stl:\ ,stlnc:\
-	let spr=""
-	let sbspr="|"
+  set fillchars+=stl:\ ,stlnc:\
+  let spr=""
+  let sbspr="|"
 endif
 
 
-"python settings
-
-autocmd FileType python setlocal shiftwidth=4 tabstop=4
+"plugin settings
 
 
 "virtual env settings
 let g:virtualenv_directory="~/.virtualenvs/"
-
-
-"web dev settings
-
-autocmd FileType javascript setlocal foldmethod=syntax
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
-autocmd FileType html setlocal shiftwidth=2 tabstop=2
-autocmd FileType css setlocal shiftwidth=2 tabstop=2
-autocmd FileType scss setlocal shiftwidth=2 tabstop=2
 
 
 "syntastic settings
@@ -196,19 +187,19 @@ let g:NERDTreeIgnore = ['\.pyc$']
 
 set laststatus=2
 let g:lightline = {
-	\ 'active': {
-	\ 	'left': [ [ 'mode', 'paste' ],
-	\  		        [ 'fugitive', 'filename' ] ]
-	\ },
-	\ 'component_function': {
-	\   'fugitive': 'LightLineFugitive',
-	\   'readonly': 'LightLineReadonly',
-	\   'modified': 'LightLineModified',
-	\   'filename': 'LightLineFilename'
-	\ },
-	\ 'separator': { 'left': spr, 'right': ""  },
-	\ 'subseparator': { 'left': sbspr, 'right': "|"  },
-	\ }
+  \ 'active': {
+  \   'left': [ [ 'mode', 'paste' ],
+  \             [ 'fugitive', 'filename' ] ]
+  \ },
+  \ 'component_function': {
+  \   'fugitive': 'LightLineFugitive',
+  \   'readonly': 'LightLineReadonly',
+  \   'modified': 'LightLineModified',
+  \   'filename': 'LightLineFilename'
+  \ },
+  \ 'separator': { 'left': spr, 'right': ""  },
+  \ 'subseparator': { 'left': sbspr, 'right': "|"  },
+  \ }
 
 function! LightLineModified()
   if &filetype == "help"
@@ -253,15 +244,11 @@ endfunction
 
 "snippet settings
 
-let g:SuperTabDefaultCompletionType    = '<c-n>'
-let g:SuperTabCrMapping                = 0
-let g:UltiSnipsExpandTrigger           = '<tab>'
-let g:UltiSnipsJumpForwardTrigger      = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
-let g:ycm_key_list_select_completion   = ['<c-j>', '<c-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<c-k>', '<c-p>', '<Up>']
+let g:UltiSnipsExpandTrigger = '<C-j>'
+let g:UltiSnipsJumpForwardTrigger = '<C-j>'
+let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
 
 
-	"*******"
-	"__END__"
-	"*******"
+  "*******"
+  "__END__"
+  "*******"

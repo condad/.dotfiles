@@ -16,6 +16,7 @@ alias ...='cd ../../'
 alias ....='cd ../../../'
 
 # commands
+alias python='python3'
 alias pyclean="find . -name \"*.pyc\" -exec rm -f {} \;"
 
 # Virtual Env Wrapper
