@@ -11,10 +11,10 @@ execute pathogen#helptags()
 "dependencies
 
 call plug#begin('~/.vim/bundle')
-"general
+"funtionality
 Plug 'scrooloose/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
 Plug 'scrooloose/nerdcommenter'
+Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'itchyny/lightline.vim'
@@ -29,14 +29,14 @@ Plug 'jmcantrell/vim-virtualenv'
 Plug 'lepture/vim-jinja'
 Plug 'elzr/vim-json'
 Plug 'Vimjas/vim-python-pep8-indent'
-"snippets
+"completion
 Plug 'SirVer/ultisnips'
 Plug 'valloric/youcompleteme'
 Plug 'slashmili/alchemist.vim'
 Plug 'isRuslan/vim-es6'
 Plug 'bentayloruk/vim-react-es6-snippets'
 Plug 'honza/vim-snippets'
-"colours
+"colour schemes
 Plug 'roosta/srcery'
 Plug 'aereal/vim-colors-japanesque'
 Plug 'nanotech/jellybeans.vim'
@@ -120,12 +120,12 @@ nnoremap ˚ <C-w>k
 nnoremap ¬ <C-w>l
 
 "Line Movement Mappings"
-nnoremap <C-i> :m .-2<CR>==
-nnoremap <C-u> :m .+1<CR>==
-inoremap <C-u> <Esc>:m .+1<CR>==gi
-inoremap <C-i> <Esc>:m .-2<CR>==gi
-vnoremap <C-u> :m '>+1<CR>gv=gv
-vnoremap <C-i> :m '<-2<CR>gv=gv
+nnoremap <c-i> :m .-2<CR>==
+nnoremap <c-u> :m .+1<CR>==
+inoremap <c-u> <Esc>:m .+1<CR>==gi
+inoremap <c-i> <Esc>:m .-2<CR>==gi
+vnoremap <c-u> :m '>+1<CR>gv=gv
+vnoremap <c-i> :m '<-2<CR>gv=gv
 
 
 "GUI settings
@@ -177,8 +177,7 @@ let g:syntastic_style_warning_symbol = "ww"
 
 "nerd tree settings 
 
-map <leader>n <plug>NERDTreeTabsToggle<CR>
-let g:nerdtree_tabs_open_on_gui_startup=0
+map <leader>n :NERDTreeToggle<CR>
 let g:NERDTreeWinPos = "left"
 let g:NERDTreeIgnore = ['\.pyc$']
 
@@ -244,9 +243,9 @@ endfunction
 
 "snippet settings
 
-let g:UltiSnipsExpandTrigger = '<C-j>'
-let g:UltiSnipsJumpForwardTrigger = '<C-j>'
-let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
+let g:UltiSnipsExpandTrigger = '<c-j>'
+let g:UltiSnipsJumpForwardTrigger = '<c-j>'
+let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
 
 
   "*******"
