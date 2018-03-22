@@ -31,6 +31,7 @@ PS1="\[\033[1;36m\]\u\[\033[m\]@\[\033[1;33m\]\w\[\033[m\]>"
 
 # pipenv
 export PIPENV_VENV_IN_PROJECT=true
+export PIPENV_DEFAULT_PYTHON_VERSION=3.6
 alias pv='pipenv run python'
 
 # nvm

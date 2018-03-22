@@ -14,21 +14,22 @@ call plug#begin('~/.vim/bundle')
 "funtionality
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
-Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'itchyny/lightline.vim'
 Plug 'dkprice/vim-easygrep'
 Plug 'jiangmiao/auto-pairs'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 "syntax
+Plug 'dag/vim-fish'
+Plug 'mattn/emmet-vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-liquid'
 Plug 'pangloss/vim-javascript'
 Plug 'elixir-lang/vim-elixir'
-Plug 'jmcantrell/vim-virtualenv'
 Plug 'lepture/vim-jinja'
 Plug 'elzr/vim-json'
-Plug 'Vimjas/vim-python-pep8-indent'
 "completion
 Plug 'SirVer/ultisnips'
 Plug 'valloric/youcompleteme'
@@ -47,7 +48,6 @@ call plug#end()
 
 scriptencoding utf-8
 
-set number
 set timeoutlen=250
 set textwidth=120
 
@@ -180,6 +180,10 @@ let g:syntastic_style_warning_symbol = "ww"
 map <leader>n :NERDTreeToggle<CR>
 let g:NERDTreeWinPos = "left"
 let g:NERDTreeIgnore = ['\.pyc$']
+
+
+"nerd commenter settings
+let NERDSpaceDelims=1
 
 
 "lightline settings
