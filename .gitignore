@@ -4,6 +4,7 @@
 !.vim/colors
 !.vimrc
 !.bash_profile
-!.tmux.conf
-!.zshrc
 !.config/fish/functions/fish_user_key_bindings.fish
+!.config/fish/functions/fish_default_mode_prompt.fish
+!.config/fish/functions/fish_prompt.fish
+!.config/fish/functions/get_current_git_branch.fish
