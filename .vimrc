@@ -19,8 +19,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'itchyny/lightline.vim'
 Plug 'dkprice/vim-easygrep'
 Plug 'jiangmiao/auto-pairs'
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
 "syntax
 Plug 'dag/vim-fish'
 Plug 'mattn/emmet-vim'
@@ -30,6 +28,9 @@ Plug 'pangloss/vim-javascript'
 Plug 'elixir-lang/vim-elixir'
 Plug 'lepture/vim-jinja'
 Plug 'elzr/vim-json'
+Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'martinda/Jenkinsfile-vim-syntax'
+Plug 'fatih/vim-go'
 "completion
 Plug 'SirVer/ultisnips'
 Plug 'valloric/youcompleteme'
@@ -37,6 +38,10 @@ Plug 'slashmili/alchemist.vim'
 Plug 'isRuslan/vim-es6'
 Plug 'bentayloruk/vim-react-es6-snippets'
 Plug 'honza/vim-snippets'
+Plug 'mxw/vim-jsx'
+" formatters
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'tell-k/vim-autopep8'
 "colour schemes
 Plug 'roosta/srcery'
 Plug 'aereal/vim-colors-japanesque'
@@ -174,6 +179,14 @@ let g:syntastic_style_error_symbol = "ee"
 let g:syntastic_warning_symbol = "WW"
 let g:syntastic_style_warning_symbol = "ww"
 
+
+" formatter settings
+" prettier
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+" autopep8
+let g:autopep8_on_save = 1
+let g:autopep8_disable_show_diff = 1
 
 "nerd tree settings 
 
