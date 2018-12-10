@@ -9,11 +9,11 @@ FISH_FUNCTION_PATH="$HOME/.config/fish/functions"
 echo "Installing dotfiles..."
 echo
 
-ln -sF $PWD/bash_profile $HOME/.bash_profile
-ln -sF $PWD/bashrc $HOME/.bashrc
+ln -sfn $PWD/bash_profile $HOME/.bash_profile
+ln -sfn $PWD/bashrc $HOME/.bashrc
 echo "Linked bash startup scripts."
 
-ln -sF $PWD/vimrc $HOME/.vimrc
+ln -sfn $PWD/vimrc $HOME/.vimrc
 echo "Linked vim startup script."
 
 mkdir -p $VIM_AUTOLOAD_PATH $VIM_BUNDLE_PATH
@@ -23,7 +23,7 @@ echo "Linked vim plugin scripts."
 
 for file_path in $PWD/fish_functions/*.fish; do
   file_name=`basename $file_path`
-  ln -sF $file_path $FISH_FUNCTION_PATH/$file_name
+  ln -sfn $file_path $FISH_FUNCTION_PATH/$file_name
 done
 echo "Linked fish functions."
 
