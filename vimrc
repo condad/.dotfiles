@@ -31,6 +31,8 @@ Plug 'elzr/vim-json'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'fatih/vim-go'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
+Plug 'junegunn/fzf.vim'
 "completion
 Plug 'SirVer/ultisnips'
 Plug 'valloric/youcompleteme'
@@ -52,6 +54,8 @@ call plug#end()
 "global settings
 
 scriptencoding utf-8
+
+set mouse=a
 
 set timeoutlen=250
 set textwidth=120
