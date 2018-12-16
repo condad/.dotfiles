@@ -10,7 +10,9 @@ echo "Installing dotfiles..."
 echo
 
 ln -sfn $PWD/bash_profile $HOME/.bash_profile
-cat $PWD/bashrc >> $HOME/.bashrc
+if [ -f $HOME/.bashrc ]; then
+  cat $PWD/bashrc >> $HOME/.bashrc
+fi
 echo "Linked bash startup scripts."
 
 ln -sfn $PWD/vimrc $HOME/.vimrc
