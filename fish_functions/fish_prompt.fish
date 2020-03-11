@@ -1,4 +1,3 @@
-# Defined in /tmp/fish.MOiZrh/fish_prompt.fish @ line 2
 function fish_prompt
 	if not set -q VIRTUAL_ENV_DISABLE_PROMPT
         set -g VIRTUAL_ENV_DISABLE_PROMPT true
@@ -28,7 +27,7 @@ function fish_prompt
     # Line 2
     echo
     if test $VIRTUAL_ENV
-        printf "(%s) " (set_color blue)(basename (dirname $VIRTUAL_ENV))(set_color normal)
+        printf "(%s) " (set_color cyan)(basename (dirname $VIRTUAL_ENV))(set_color normal)
     end
     printf '↪ '
     set_color normal
