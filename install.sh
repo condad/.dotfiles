@@ -29,6 +29,9 @@ for file_path in $PWD/fish_functions/*.fish; do
 done
 echo "Linked fish functions."
 
+vim +PlugInstall +qall
+echo "Installed vim plugins."
+
 echo
 echo "Install complete."
 
