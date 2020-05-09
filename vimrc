@@ -56,7 +56,11 @@ let mapleader = ";"
 let maplocalleader = "-"
 
 "default colour scheme
-colorscheme srcery "default colour scheme
+try
+  colorscheme srcery "default colour scheme
+catch
+  "Likely not installed yet so do nothing
+endtry
 
 "swap visual modes
 nnoremap v <c-v>
