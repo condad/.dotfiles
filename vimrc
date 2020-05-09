@@ -21,33 +21,11 @@ Plug 'dkprice/vim-easygrep'
 Plug 'jiangmiao/auto-pairs'
 "syntax
 Plug 'dag/vim-fish'
-Plug 'mattn/emmet-vim'
-Plug 'vim-syntastic/syntastic'
-Plug 'tpope/vim-liquid'
-Plug 'pangloss/vim-javascript'
-Plug 'elixir-lang/vim-elixir'
-Plug 'lepture/vim-jinja'
 Plug 'elzr/vim-json'
-Plug 'Vimjas/vim-python-pep8-indent'
-Plug 'martinda/Jenkinsfile-vim-syntax'
-Plug 'fatih/vim-go'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
-Plug 'junegunn/fzf.vim'
 "completion
 Plug 'SirVer/ultisnips'
-Plug 'valloric/youcompleteme'
-Plug 'slashmili/alchemist.vim'
-Plug 'isRuslan/vim-es6'
-Plug 'bentayloruk/vim-react-es6-snippets'
-Plug 'honza/vim-snippets'
-Plug 'mxw/vim-jsx'
-" formatters
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'tell-k/vim-autopep8'
 "colour schemes
 Plug 'roosta/srcery'
-Plug 'aereal/vim-colors-japanesque'
-Plug 'nanotech/jellybeans.vim'
 call plug#end()
 
 
@@ -172,26 +150,6 @@ endif
 "plugin settings
 
 
-"virtual env settings
-let g:virtualenv_directory="~/.virtualenvs/"
-
-
-"syntastic settings
-
-let g:syntastic_error_symbol = "EE"
-let g:syntastic_style_error_symbol = "ee"
-let g:syntastic_warning_symbol = "WW"
-let g:syntastic_style_warning_symbol = "ww"
-
-
-" formatter settings
-" prettier
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
-" autopep8
-let g:autopep8_on_save = 1
-let g:autopep8_disable_show_diff = 1
-
 "nerd tree settings 
 
 map <leader>n :NERDTreeToggle<CR>
@@ -200,6 +158,7 @@ let g:NERDTreeIgnore = ['\.pyc$']
 
 
 "nerd commenter settings
+
 let NERDSpaceDelims=1
 
 
