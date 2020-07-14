@@ -110,14 +110,6 @@ nnoremap ∆ <C-w>j
 nnoremap ˚ <C-w>k 
 nnoremap ¬ <C-w>l
 
-"Line Movement Mappings"
-nnoremap <c-i> :m .-2<CR>==
-nnoremap <c-u> :m .+1<CR>==
-inoremap <c-u> <Esc>:m .+1<CR>==gi
-inoremap <c-i> <Esc>:m .-2<CR>==gi
-vnoremap <c-u> :m '>+1<CR>gv=gv
-vnoremap <c-i> :m '<-2<CR>gv=gv
-
 
 "GUI settings
   
