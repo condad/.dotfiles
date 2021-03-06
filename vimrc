@@ -148,7 +148,7 @@ endif
 
 "nerd tree settings 
 
-map <leader>n :NERDTreeToggle<CR>
+map <leader>n :NERDTreeToggle %<CR>
 let g:NERDTreeWinPos = "left"
 let g:NERDTreeIgnore = ['\.pyc$']
 
