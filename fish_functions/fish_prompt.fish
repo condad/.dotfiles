@@ -25,6 +25,14 @@ function fish_prompt
     printf '%s' (prompt_pwd)
     set_color normal
 
+    # If a default AWS profile has been set, display it
+    if set -qx AWS_PROFILE
+      printf ' as '
+      set_color --bold red
+      printf '%s' $AWS_PROFILE
+      set_color normal
+    end
+
     # Line 2
     echo
     if test $VIRTUAL_ENV
