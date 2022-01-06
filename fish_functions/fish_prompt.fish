@@ -1,7 +1,8 @@
 function fish_prompt
-	if not set -q VIRTUAL_ENV_DISABLE_PROMPT
-        set -g VIRTUAL_ENV_DISABLE_PROMPT true
+    if not set -q VIRTUAL_ENV_DISABLE_PROMPT
+      set -g VIRTUAL_ENV_DISABLE_PROMPT true
     end
+
     set_color --bold yellow
     printf '%s' (whoami)
     set_color normal
@@ -27,7 +28,9 @@ function fish_prompt
     # Line 2
     echo
     if test $VIRTUAL_ENV
-        printf "(%s) " (set_color cyan)(basename (dirname $VIRTUAL_ENV))(set_color normal)
+      set_color cyan
+      printf "(%s) " (basename (dirname $VIRTUAL_ENV))
+      set_color normal
     end
     printf '↪ '
     set_color normal
