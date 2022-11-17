@@ -22,8 +22,6 @@ Plug 'jiangmiao/auto-pairs'
 "syntax
 Plug 'dag/vim-fish'
 Plug 'elzr/vim-json'
-"completion
-Plug 'SirVer/ultisnips'
 "colour schemes
 Plug 'roosta/srcery'
 call plug#end()
@@ -215,13 +213,6 @@ function! LightLineFilename()
        \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
        \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
 endfunction
-
-
-"snippet settings
-
-let g:UltiSnipsExpandTrigger = '<c-j>'
-let g:UltiSnipsJumpForwardTrigger = '<c-j>'
-let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
 
 
   "*******"
