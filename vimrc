@@ -31,6 +31,9 @@ call plug#end()
 
 scriptencoding utf-8
 
+" Use new regex engine
+set re=0
+
 set mouse=a
 
 set timeoutlen=250
