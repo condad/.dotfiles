@@ -18,6 +18,9 @@ echo "Linked bash startup scripts."
 ln -sfn $PWD/vimrc $HOME/.vimrc
 echo "Linked vim startup script."
 
+ln -sfn $PWD/jq $HOME/.jq
+echo "Linked jq module(s)."
+
 mkdir -p $VIM_AUTOLOAD_PATH $VIM_BUNDLE_PATH
 curl -LSso $VIM_AUTOLOAD_PATH/pathogen.vim $VIM_PATHOGEN_URL
 curl -LSso $VIM_AUTOLOAD_PATH/plug.vim $VIM_PLUG_URL
