@@ -1,6 +1,7 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
+brew "ag"
 brew "awscli"
 brew "bat"
 brew "cbc"
