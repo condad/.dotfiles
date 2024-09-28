@@ -15,6 +15,9 @@ if [ -f $HOME/.bashrc ]; then
 fi
 echo "Linked bash startup scripts."
 
+ln -sfn $PWD/zshrc $HOME/.zshrc
+echo "Linked zsh startup script."
+
 ln -sfn $PWD/vimrc $HOME/.vimrc
 echo "Linked vim startup script."
 
