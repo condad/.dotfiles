@@ -22,13 +22,11 @@ Plug 'jiangmiao/auto-pairs'
 "syntax
 Plug 'dag/vim-fish'
 Plug 'elzr/vim-json'
-"colour schemes
-Plug 'roosta/srcery'
 call plug#end()
 
 
 "global settings
-
+colorscheme elflord
 scriptencoding utf-8
 
 " Use new regex engine
@@ -55,13 +53,6 @@ filetype indent on
 
 let mapleader = ";"
 let maplocalleader = "-"
-
-"default colour scheme
-try
-  colorscheme srcery "default colour scheme
-catch
-  "Likely not installed yet so do nothing
-endtry
 
 "swap visual modes
 nnoremap v <c-v>
