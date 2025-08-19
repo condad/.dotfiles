@@ -38,6 +38,11 @@ echo "Linked fish functions."
 vim +PlugInstall +qall
 echo "Installed vim plugins."
 
+echo "Installing brew packages..."
+echo
+brew bundle install
+echo "Installed brew packages."
+
 echo
 echo "Install complete."
 
