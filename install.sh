@@ -28,6 +28,10 @@ mkdir -p $HOME/.config/ghostty
 ln -sfn $PWD/ghostty-config $HOME/.config/ghostty/config
 echo "Linked ghostty config"
 
+mkdir -p $HOME/.aws
+ln -sfn $PWD/aws-config $HOME/.aws/config
+echo "Linked aws config"
+
 mkdir -p $VIM_AUTOLOAD_PATH $VIM_BUNDLE_PATH
 curl -LSso $VIM_AUTOLOAD_PATH/pathogen.vim $VIM_PATHOGEN_URL
 curl -LSso $VIM_AUTOLOAD_PATH/plug.vim $VIM_PLUG_URL
