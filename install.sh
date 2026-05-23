@@ -4,7 +4,9 @@ VIM_AUTOLOAD_PATH="$HOME/.vim/autoload"
 VIM_BUNDLE_PATH="$HOME/.vim/bundle"
 VIM_PATHOGEN_URL="https://tpo.pe/pathogen.vim"
 VIM_PLUG_URL="https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-FISH_FUNCTION_PATH="$HOME/.config/fish/functions"
+FISH_CONF_D_PATH="$HOME/.config/fish/conf.d"
+FISH_DOTFILES_PATH="$FISH_CONF_D_PATH/dotfiles.fish"
+DOTFILES_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 echo "Installing dotfiles..."
 echo
@@ -37,11 +39,11 @@ curl -LSso $VIM_AUTOLOAD_PATH/pathogen.vim $VIM_PATHOGEN_URL
 curl -LSso $VIM_AUTOLOAD_PATH/plug.vim $VIM_PLUG_URL
 echo "Linked vim plugin scripts."
 
-for file_path in $PWD/fish_functions/*.fish; do
-  file_name=`basename $file_path`
-  ln -sfn $file_path $FISH_FUNCTION_PATH/$file_name
-done
-echo "Linked fish functions."
+mkdir -p "$FISH_CONF_D_PATH"
+cat > "$FISH_DOTFILES_PATH" <<EOF
+set -g fish_function_path "$DOTFILES_PATH/fish_functions" \$fish_function_path
+EOF
+echo "Prepended fish functions path."
 
 vim +PlugInstall +qall
 echo "Installed vim plugins."

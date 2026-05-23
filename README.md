@@ -6,4 +6,4 @@ Install with:
 ./install.sh
 ```
 
-Links bash, vim, and fish functions files.
+Links bash and vim files, and prepends the local fish functions directory to Fish's function path.
