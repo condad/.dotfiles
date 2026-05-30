@@ -42,8 +42,10 @@ echo "Linked vim plugin scripts."
 mkdir -p "$FISH_CONF_D_PATH"
 cat > "$FISH_DOTFILES_PATH" <<EOF
 set -g fish_function_path "$DOTFILES_PATH/fish_functions" \$fish_function_path
+set -gx VOLTA_HOME "\$HOME/.volta"
+fish_add_path -g \$VOLTA_HOME/bin
 EOF
-echo "Prepended fish functions path."
+echo "Prepended fish functions path and configured Volta."
 
 vim +PlugInstall +qall
 echo "Installed vim plugins."
