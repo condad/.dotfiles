@@ -30,8 +30,6 @@ brew "ruby", link: false
 brew "the_silver_searcher"
 # JavaScript toolchain manager for reproducible environments
 brew "volta"
-# OpenAI's coding agent that runs in your terminal
-cask "codex"
 # App to build and share containerised applications and microservices
 cask "docker-desktop"
 # Screen colour temperature controller
