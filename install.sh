@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
 VIM_AUTOLOAD_PATH="$HOME/.vim/autoload"
 VIM_BUNDLE_PATH="$HOME/.vim/bundle"
@@ -54,7 +55,7 @@ echo "Installed vim plugins."
 
 echo "Installing brew packages..."
 echo
-brew bundle install
+brew bundle install --file="$DOTFILES_PATH/Brewfile"
 echo "Installed brew packages."
 
 echo

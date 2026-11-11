@@ -6,6 +6,8 @@ brew "python@3.14"
 brew "awscli"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Package-manager bridge; install via Homebrew to avoid Volta npm shim conflicts
+brew "corepack"
 # Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
 # User-friendly command-line shell for UNIX-like operating systems
@@ -82,4 +84,3 @@ vscode "waderyan.gitblame"
 vscode "xabikos.javascriptsnippets"
 vscode "yoavbls.pretty-ts-errors"
 vscode "yzhang.markdown-all-in-one"
-npm "corepack"
