@@ -30,6 +30,8 @@ mkdir -p $HOME/.config/ghostty
 ln -sfn $PWD/ghostty-config $HOME/.config/ghostty/config
 echo "Linked ghostty config"
 
+bash "$DOTFILES_PATH/scripts/link-skills.sh" || exit 1
+
 mkdir -p $HOME/.aws
 ln -sfn $PWD/aws-config $HOME/.aws/config
 echo "Linked aws config"

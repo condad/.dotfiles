@@ -1,0 +1,7 @@
+interface:
+  display_name: "Delegate PR Worktree"
+  short_description: "Choose a subagent or a top-level agent in a worktree"
+  default_prompt: "Use $delegate-pr-worktree to delegate this task in its own worktree and open a PR; default to a top-level agent in a new Ghostty tab (--agent), or use --subagent to delegate within this conversation."
+
+policy:
+  allow_implicit_invocation: false
